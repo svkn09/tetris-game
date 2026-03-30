@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TETRIS</h1>
+        </header>
+
+        <main class="game-wrapper">
+            <!-- ゲームボード -->
+            <div class="game-area">
+                <canvas id="gameCanvas" width="300" height="600"></canvas>
+            </div>
+
+            <!-- サイドパネル -->
+            <aside class="side-panel">
+                <!-- スコア表示 -->
+                <div class="info-box">
+                    <h3>SCORE</h3>
+                    <div class="score-display" id="scoreDisplay">0</div>
+                </div>
+
+                <!-- レベル表示 -->
+                <div class="info-box">
+                    <h3>LEVEL</h3>
+                    <div class="level-display" id="levelDisplay">1</div>
+                </div>
+
+                <!-- ライン数表示 -->
+                <div class="info-box">
+                    <h3>LINES</h3>
+                    <div class="lines-display" id="linesDisplay">0</div>
+                </div>
+
+                <!-- 次のブロック表示 -->
+                <div class="info-box">
+                    <h3>NEXT</h3>
+                    <canvas id="nextCanvas" width="120" height="120"></canvas>
+                </div>
+
+                <!-- ホールド表示 -->
+                <div class="info-box">
+                    <h3>HOLD</h3>
+                    <canvas id="holdCanvas" width="120" height="120"></canvas>
+                </div>
+
+                <!-- ゲーム状態表示 -->
+                <div class="info-box">
+                    <h3>STATUS</h3>
+                    <div class="status-display" id="statusDisplay">READY</div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- コントロールパネル -->
+        <div class="control-panel">
+            <button id="startBtn" class="btn btn-primary">START</button>
+            <button id="pauseBtn" class="btn btn-secondary" disabled>PAUSE</button>
+            <button id="resetBtn" class="btn btn-secondary">RESET</button>
+        </div>
+
+        <!-- 操作方法 -->
+        <footer class="controls-info">
+            <h3>操作方法</h3>
+            <ul>
+                <li><strong>← / →</strong> : ブロック移動</li>
+                <li><strong>↑</strong> : 回転</li>
+                <li><strong>↓</strong> : ソフトドロップ</li>
+                <li><strong>SPACE</strong> : ハードドロップ</li>
+                <li><strong>Z</strong> : ホールド</li>
+                <li><strong>P</strong> : 一時停止</li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
